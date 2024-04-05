@@ -1,0 +1,67 @@
+{
+  "name": "vincentragosta/project",
+  "version": "1.0.0",
+  "description": "A platform build using decoupled frontend and backend. Visual Composer/ACF for backend + Vue frontend.",
+  "authors": [
+    {
+      "name": "Vincent Ragosta",
+      "email": "vincentpasqualeragosta@gmail.com",
+      "homepage": "https://vincentragosta.io"
+    }
+  ],
+  "type": "project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://packages.vincentragosta.dev"
+    }
+  ],
+  "config": {
+    "vendor-dir": "wp-content/vendor",
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "johnpbloch/wordpress-core-installer": true,
+      "composer/installers": true
+    },
+    "platform": {
+      "php": "8.2"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "DevAnime\\": "wp-content/themes/devanime/lib",
+      "ChildTheme\\": "wp-content/themes/project/lib"
+    }
+  },
+  "require": {
+    "johnpbloch/wordpress": "*",
+    "roots/soil": "*",
+    "wp-sync-db/wp-sync-db": "dev-master",
+    "wp-sync-db/wp-sync-db-media-files": "dev-master",
+    "vinnyrags/wordpress-seo-premium": "dev-main",
+    "vinnyrags/advanced-custom-fields-pro": "dev-main",
+    "vinnyrags/devanime": "dev-main",
+    "vinnyrags/visual-composer": "dev-main",
+    "wpackagist-plugin/bu-versions": "*",
+    "wpackagist-plugin/classic-editor": "*",
+    "wpackagist-plugin/imagify": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "kint-php/kint": "^2.0",
+    "wp-sync-db/wp-sync-db-cli": "dev-master"
+  },
+  "minimum-stability": "dev",
+  "extra": {
+    "wordpress-install-dir": "wp",
+    "kint": {
+      "disable-helper-functions": true
+    }
+  },
+  "scripts": {}
+}
