@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e2586dac0a9534c3d97f813b38d1582",
+    "content-hash": "e24267f9fc3e54c84e34103ef1d69226",
     "packages": [
         {
             "name": "composer/installers",
@@ -158,12 +158,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "896e84923a8b42caf48dbbd031324e067b4cd461"
+                "reference": "3ace9d096066842d676f91180ee6a5e9e42c5b72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/896e84923a8b42caf48dbbd031324e067b4cd461",
-                "reference": "896e84923a8b42caf48dbbd031324e067b4cd461",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/3ace9d096066842d676f91180ee6a5e9e42c5b72",
+                "reference": "3ace9d096066842d676f91180ee6a5e9e42c5b72",
                 "shasum": ""
             },
             "require": {
@@ -199,7 +199,7 @@
                 "source": "https://core.trac.wordpress.org/browser",
                 "wiki": "https://codex.wordpress.org/"
             },
-            "time": "2024-04-02T19:31:15+00:00"
+            "time": "2024-04-06T13:46:10+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -367,12 +367,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vinnyrags/devanime.git",
-                "reference": "a488fe80f17fb3aafa24002f7f2880a7210d8cba"
+                "reference": "652435d349c2d8978a1ff8ebbdc3922c6d97dee4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vinnyrags/devanime/zipball/a488fe80f17fb3aafa24002f7f2880a7210d8cba",
-                "reference": "a488fe80f17fb3aafa24002f7f2880a7210d8cba",
+                "url": "https://api.github.com/repos/vinnyrags/devanime/zipball/652435d349c2d8978a1ff8ebbdc3922c6d97dee4",
+                "reference": "652435d349c2d8978a1ff8ebbdc3922c6d97dee4",
                 "shasum": ""
             },
             "require": {
@@ -397,7 +397,7 @@
                 "source": "https://github.com/vinnyrags/devanime/tree/main",
                 "issues": "https://github.com/vinnyrags/devanime/issues"
             },
-            "time": "2024-04-03T04:30:28+00:00"
+            "time": "2024-04-05T05:14:05+00:00"
         },
         {
             "name": "vinnyrags/visual-composer",
@@ -648,6 +648,36 @@
             "time": "2020-07-21T10:02:03+00:00"
         },
         {
+            "name": "vinnyrags/child-theme",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vinnyrags/child-theme.git",
+                "reference": "8fb3f1f1bb32156ab4f9d154189d7afec44e3753"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vinnyrags/child-theme/zipball/8fb3f1f1bb32156ab4f9d154189d7afec44e3753",
+                "reference": "8fb3f1f1bb32156ab4f9d154189d7afec44e3753",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=8.2"
+            },
+            "default-branch": true,
+            "type": "wordpress-theme",
+            "license": [
+                "GPL-3.0"
+            ],
+            "description": "DevAnime Child Theme for all projects.",
+            "support": {
+                "source": "https://github.com/vinnyrags/child-theme/tree/main",
+                "issues": "https://github.com/vinnyrags/child-theme/issues"
+            },
+            "time": "2024-04-05T04:34:29+00:00"
+        },
+        {
             "name": "wp-sync-db/wp-sync-db-cli",
             "version": "dev-master",
             "source": {
@@ -694,7 +724,8 @@
         "vinnyrags/advanced-custom-fields-pro": 20,
         "vinnyrags/devanime": 20,
         "vinnyrags/visual-composer": 20,
-        "wp-sync-db/wp-sync-db-cli": 20
+        "wp-sync-db/wp-sync-db-cli": 20,
+        "vinnyrags/child-theme": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
