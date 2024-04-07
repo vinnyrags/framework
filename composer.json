@@ -1,5 +1,5 @@
 {
-  "name": "vincentragosta/project",
+  "name": "vinnyrags/project",
   "version": "1.0.0",
   "description": "A platform build using decoupled frontend and backend. Visual Composer/ACF for backend + Vue frontend.",
   "authors": [
@@ -46,6 +46,7 @@
     "vinnyrags/wordpress-seo-premium": "dev-main",
     "vinnyrags/advanced-custom-fields-pro": "dev-main",
     "vinnyrags/devanime": "dev-main",
+    "vinnyrags/child-theme": "dev-main",
     "vinnyrags/visual-composer": "dev-main",
     "wpackagist-plugin/bu-versions": "*",
     "wpackagist-plugin/classic-editor": "*",
@@ -55,7 +56,6 @@
   "require-dev": {
     "kint-php/kint": "^2.0",
     "wp-sync-db/wp-sync-db-cli": "dev-master",
-    "vinnyrags/child-theme": "dev-main"
   },
   "minimum-stability": "dev",
   "extra": {
