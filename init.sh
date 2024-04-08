@@ -17,6 +17,7 @@ sed -i '' "s/projectSlug/$projectNamespace/g" composer.json
 mv wp-content/themes/child-theme wp-content/themes/$projectSlug
 rm -rf wp-content/themes/$projectSlug/.git
 rm -rf wp-content/themes/$projectSlug/.gitignore
+rm -rf wp-content/themes/$projectSlug/composer.json
 echo "$projectSlug theme initialized..."
 
 read -p "Enter New Git Repository SSH url: " gitRepoUrl
@@ -25,3 +26,5 @@ git add --all
 git commit -m "initial commit"
 git branch -M main
 git push origin main
+
+rm init.sh
