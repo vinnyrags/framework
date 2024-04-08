@@ -55,7 +55,7 @@
   },
   "require-dev": {
     "kint-php/kint": "^2.0",
-    "wp-sync-db/wp-sync-db-cli": "dev-master",
+    "wp-sync-db/wp-sync-db-cli": "dev-master"
   },
   "minimum-stability": "dev",
   "extra": {
