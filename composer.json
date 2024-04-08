@@ -1,5 +1,5 @@
 {
-  "name": "vinnyrags/projectSlug",
+  "name": "vinnyrags/project-slug",
   "version": "1.0.0",
   "description": "A platform build using decoupled frontend and backend. Visual Composer/ACF for backend + Vue frontend.",
   "authors": [
