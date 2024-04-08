@@ -1,38 +1,27 @@
 #!/bin/bash
 
-# Run composer update without interaction
-composer update --no-interaction
+read -p "Enter Project Name: " projectName
+projectSlug=$(echo "$projectName" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+projectTitle=$(echo "$projectName" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)}1')
+projectNamespace=$(echo $projectTitle | tr -d ' ')
 
-# Remove "vinnyrags/child-theme" from composer.json
-sed -i '' '/"vinnyrags\/child-theme"/d' composer.json
+echo "Installing Plugins..."
+composer update
+echo "Plugins installed."
 
-# Remove /wp-content/themes/child-theme/.git
-rm -rf wp-content/themes/child-theme/.git
+echo "Initializing $projectSlug theme..."
+sed -i '' "s/Theme Name:.*$/Theme Name: $projectTitle/" wp-content/themes/child-theme/style.css
+sed -i '' "s/Theme URI:.*$/Theme URI: https:\/\/$projectSlug.io/" wp-content/themes/child-theme/style.css
+sed -i '' "s/project-slug/$projectSlug/g" composer.json
+sed -i '' "s/projectSlug/$projectNamespace/g" composer.json
+mv wp-content/themes/child-theme wp-content/themes/$projectSlug
+rm -rf wp-content/themes/$projectSlug/.git
+rm -rf wp-content/themes/$projectSlug/.gitignore
+echo "$projectSlug theme initialized..."
 
-# Prompt the user for a project name
-read -p "Enter project name: " projectName
-
-# Change "name" in composer.json
-sed -i '' "s/\"name\": \"vinnyrags\/project\"/\"name\": \"vinnyrags\/$(echo "$projectName" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')\"/" composer.json
-
-# Rename themes/child-theme directory
-mv wp-content/themes/child-theme wp-content/themes/$(echo "$projectName" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
-
-# Update themes/{input value}/style.scss Theme Name
-sed -i '' "s/Theme Name: Project/Theme Name: $(echo "$projectName" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')/" wp-content/themes/$(echo "$projectName" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')/style.scss
-
-# Change Theme URI
-sed -i '' "s/Theme URI: https:\/\/project.io/Theme URI: https:\/\/$(echo "$projectName" | tr '[:upper:]' '[:lower:]' | tr ' ' '-').io/" wp-content/themes/$(echo "$projectName" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')/style.scss
-
-# Prompt the user to enter the new project git url
-read -p "Enter the new project git URL: " gitUrl
-
-# Update the git remote URL
-cd wp-content/themes/$(echo "$projectName" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
-git remote set-url origin "$gitUrl"
-cd ../..
-
-# Git commit and push
-git add .
-git commit -m "Initial commit"
-git push
+read -p "Enter New Git Repository SSH url: " gitRepoUrl
+git remote set-url origin $gitRepoUrl
+git add --all
+git commit -m "initial commit"
+git branch -M main
+git push origin main
