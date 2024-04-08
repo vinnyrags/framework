@@ -1,5 +1,5 @@
 {
-  "name": "vinnyrags/project",
+  "name": "vinnyrags/{{projectSlug}}",
   "version": "1.0.0",
   "description": "A platform build using decoupled frontend and backend. Visual Composer/ACF for backend + Vue frontend.",
   "authors": [
@@ -35,7 +35,7 @@
   "autoload": {
     "psr-4": {
       "DevAnime\\": "wp-content/themes/devanime/lib",
-      "ChildTheme\\": "wp-content/themes/project/lib"
+      "ChildTheme\\": "wp-content/themes/{{projectSlug}}/lib"
     }
   },
   "require": {
